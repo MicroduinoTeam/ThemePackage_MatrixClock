@@ -30,7 +30,7 @@ String mname[7] = {"ID", "Time", "Date", "number" , "point", "Mode", "msg"};
 
 String ID = "{\"ID\":\"594744f110f74e000164bbdf\"}";
 
-String myMsg = "Hello MarsBase!";
+String myMsg = "Hello mCookie!";
 String myMsgC = "";
 
 int8_t mytime[3] = {0, 0, 0};
@@ -44,9 +44,9 @@ boolean changeM;
 
 void IDupload()
 {
-  Serial.print(ID.substring(0, 17));
+  BLE_Serial.print(ID.substring(0, 17));
   delay(100);
-  Serial.println(ID.substring(17, ID.length()));
+  BLE_Serial.println(ID.substring(17, ID.length()));
   delay(100);
 }
 
@@ -63,19 +63,19 @@ void uploaddata(String _st, int _data)
 
   if (number == 0)
   {
-    Serial.println(send_data);
+    BLE_Serial.println(send_data);
     delay(30);
   }
   else
   {
     while (number >= 0)
     {
-      Serial.print(send_data.substring(0, 17));
+      BLE_Serial.print(send_data.substring(0, 17));
       send_data = send_data.substring(17, send_data.length());
       delay(30);
       number--;
     }
-    Serial.print("\n");
+    BLE_Serial.print("\n");
   }
 }
 
@@ -139,8 +139,8 @@ void solutiondata(String _data)
 
 void readserail()
 {
-  if (Serial.available() > 0) {
-    inByte = Serial.read();
+  if (BLE_Serial.available() > 0) {
+    inByte = BLE_Serial.read();
     if (inByte == '{')
       readValue++;
     else if (inByte == '}')

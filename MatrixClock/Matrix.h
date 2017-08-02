@@ -1,6 +1,6 @@
 #include <Microduino_Matrix.h>
 uint8_t Addr[MatrixPix_X][MatrixPix_Y] = {
-  { 45, 46, 47, 48}      //点阵1x4排列
+  { 64, 63, 62, 61}      //点阵1x4排列
 };
 Matrix display = Matrix(Addr, TYPE_S2); //TYPE_COLOR or TYPE_S2
 

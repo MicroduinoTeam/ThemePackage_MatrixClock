@@ -13,7 +13,6 @@ void setup() {
 }
 
 void loop() {
-  //Matrixjson_data();
   readserail();
 
   if (modeC != mode)
